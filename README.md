@@ -38,4 +38,13 @@ SELECT
     province_name
 FROM patients
  JOIN province_names ON patients.province_id = province_names.province_id
- #8. Show how many patients have a birth_date with 2010 as the birth year.
+ # Fetch all of the people who are either unemployed or between the ages of 20 and 28 (including 20 and 28) but not age 22.
+ SELECT *
+FROM people
+WHERE status = 'unemployed'
+OR (age BETWEEN 20 AND 28 AND age <>22);
+
+#Fetch all of the colorful objects. Instead of writing colorful = 1 try to use the TRUE keyword.
+SELECT *
+FROM objects
+WHERE id IS NOT FALSE AND colorful IS TRUE;
